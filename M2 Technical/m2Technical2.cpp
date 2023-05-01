@@ -53,6 +53,7 @@ int menu(){
 }
 
 void string_length(){
+    cout << "STRING LENGTH\n";
     string str; // declare a string variable
     cout << "Enter a string: "; // ask the user for a string
     cin.ignore(); // ignore the newline character
