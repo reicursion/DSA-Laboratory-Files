@@ -20,23 +20,23 @@ class Array1D {
         void DisplayElements();
 };
 
-class ArrayConcrete: public Array1D{
+class ArrayConcrete: public Array1D{ // inherits from Array1D, ArrayConcrete class inherits the public members of Array1D
      public:
-     	ArrayConcrete(int Arraycap = 10);
-        ~ArrayConcrete();
-        int GetSize();
-        bool isEmpty() const;
-        bool isFull() const;
-        void InsertItem(int pos,int val);
-        void RemoveItem(int pos);
-        void AddItem(int val);
-        void DisplayElements();
+     	ArrayConcrete(int Arraycap = 10); // default constructor
+        ~ArrayConcrete(); // destructor
+        int GetSize(); // returns the size of the array
+        bool isEmpty() const; // returns true if array is empty
+        bool isFull() const; // returns true if array is full
+        void InsertItem(int pos,int val); // inserts an item at a given position
+        void RemoveItem(int pos); // removes an item at a given position
+        void AddItem(int val); // adds an item at the end of the array
+        void DisplayElements(); // displays all the elements in the array
 };
 
-ArrayConcrete::ArrayConcrete(int Arraycap){
-    capacity = Arraycap;
-    array = new int[capacity];
-    size = 0;
+ArrayConcrete::ArrayConcrete(int Arraycap){ // default constructor
+    capacity = Arraycap; // sets the capacity of the array using the Arraycap
+    array = new int[capacity]; // creates a new array with the capacity
+    size = 0; // sets the size to 0
 }
 
 int ArrayConcrete::GetSize(){
@@ -117,12 +117,9 @@ int main(){
         arr.DisplayElements();
 
     cout << "\nArray size: " << arr.GetSize() << endl;
-    if (arr.isEmpty())
-    {
+    if (arr.isEmpty()) {
         cout << "Array is empty!" << endl;
-    }
-    else
-     {
+    } else {
         cout << "Array is not empty!" << endl;
     }
 
