@@ -4,8 +4,8 @@ using namespace std;
 // function breadcrumb
 int menu();
 void string_length(char *str);
-/*
 void string_compare(char *str1, char *str2);
+/*
 void string_concatenate(char *str1, char *str2);
 void ex();
 */
@@ -21,10 +21,11 @@ int main(){
         case 1:
             string_length(str);
             break;
-/*
+
         case 2:
             string_compare(str1, str2);
-
+            break;
+/*
         case 3:
             string_concatenate(str1, str2);
 
@@ -48,9 +49,9 @@ int menu(){
     cout << "3. Concatenate two strings\n";
     cout << "4. Exit\n\n";
 
-    cout << "Enter your choice: " << choice;
+    cout << "Enter your choice: ";
     cin >> choice;
--
+
     return choice;
 }
 
@@ -100,6 +101,7 @@ void string_compare(char *str1, char *str2){
         cout << "The strings are not equal.";
     }
 }
+
 
 // function to concatenate two strings
 void string_concatenate(char *str1, char *str2){
