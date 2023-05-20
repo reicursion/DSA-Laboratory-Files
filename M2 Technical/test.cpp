@@ -4,15 +4,15 @@ using namespace std;
 // function breadcrumb
 int menu();
 void string_length(char *str);
-void string_compare(char *str1, char *str2);
 /*
+void string_compare(char *str1, char *str2);
 void string_concatenate(char *str1, char *str2);
 void ex();
 */
 
 int main(){
 
-    char *str, *str1, *str2;
+    char *str, *str1, str2;
 
     int choice = menu();
 
@@ -20,12 +20,11 @@ int main(){
         {
         case 1:
             string_length(str);
-            break;
-
+            
+/*
         case 2:
             string_compare(str1, str2);
-            break;
-/*
+
         case 3:
             string_concatenate(str1, str2);
 
@@ -49,7 +48,7 @@ int menu(){
     cout << "3. Concatenate two strings\n";
     cout << "4. Exit\n\n";
 
-    cout << "Enter your choice: ";
+    cout << "Enter your choice: " << choice;
     cin >> choice;
 
     return choice;
@@ -70,41 +69,38 @@ void string_length(char *str){
     cout << "Length of the string is: " << length;
 }
 
+/*
 // function to compare two strings
 void string_compare(char *str1, char *str2){
+    int i = 0, j = 0, flag = 0;
+    char str1[1000];
+    char str2[1000];
 
     cout << "Enter the first string: ";
     cin.ignore();
-    cin.getline(str1,1000);
+    cin.getline(str1, 1000);
 
     cout << "Enter the second string: ";
-    cin.ignore();
-    cin.getline(str2,1000);
+    cin.getline(str2, 1000);
 
-    int str1len = 0;
-    for (int i = 0; str1[i] != '\0'; i++){
-        str1len++;
+    // loop to compare the strings
+    while (str1[i] != '\0' && str2[j] != '\0'){
+        if (str1[i] != str2[j]){
+            flag = 1;
+            break;
+        }
+        i++;
+        j++;
     }
 
-    int str2len = 0;
-    for (int i = 0; str2[i] != '\0'; i++){
-        str2len++;
+    if (flag == 0){
+        cout << "The strings are equal.";
     }
-
-    cout << str1len;
-    cout << str2len;
-
-    // compare two strings
-    if (str1len < str2len){
-        cout << "The first string is smaller.";
-    } else if (str1len > str2len) {
-        cout << "The second string is smaller.";
-    } else {
-        cout << "The first string and second string are equal.";
+    else{
+        cout << "The strings are not equal.";
     }
 }
 
-/*
 // function to concatenate two strings
 void string_concatenate(char *str1, char *str2){
     int i = 0, j = 0;
